@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POS Servlet</title>
+    <link rel="stylesheet" href="asserts/css/bootstrap.min.css">
+</head>
+<body>
+    <main class="container-fluid">
+        <section class="row">
+            <h1>Customer Add</h1>
+        </section>
+        <section class="row">
+            <div class="col-md-6">
+                <form action="customer" method="post">
+                    <div>
+                        <label for="id" class="form-label">Customer ID</label>
+                        <input id="id" type="text" class="form-control" name="id">
+                    </div>
+                    <div>
+                        <label for="name" class="form-label">Customer Name</label>
+                        <input id="name" type="text" class="form-control" name="name">
+                    </div>
+                    <div>
+                        <label for="address" class="form-label">Customer Address</label>
+                        <input id="address" type="text" class="form-control" name="address">
+                    </div>
+                    <div>
+                        <label for="salary" class="form-label">Customer Salary</label>
+                        <input id="salary" type="text" class="form-control" name="salary">
+                    </div>
+                    <div class="mt-3">
+                        <button class="btn btn-primary" type="submit">Save Customer</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="asserts/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <link rel="stylesheet" href="asserts/css/bootstrap.min.css">
+</head>
+<body>
+
+    <header class="mt-3">
+        <h1>Ajax</h1>
+    </header>
+    <section class="container-fluid">
+        <section class="row">
+            <div class="col-md-4">
+                <form>
+                    <div>
+                        <label for="id" class="form-label">Customer ID</label>
+                        <input type="text" id="id" name="id" class="form-control">
+                    </div>
+                    <div>
+                        <label for="name" class="form-label">Customer Name</label>
+                        <input type="text" id="name" name="name" class="form-control">
+                    </div>
+                    <div>
+                        <label for="address" class="form-label">Customer Address</label>
+                        <input type="text" id="address" name="address" class="form-control">
+                    </div>
+                    <div>
+                        <label for="salary" class="form-label">Customer Salary</label>
+                        <input type="text" id="salary" name="salary" class="form-control">
+                    </div>
+                    <div class="btn btn-group">
+                        <button id="btnCustomerSave" class="btn btn-primary" type="button">Save Customer</button>
+                        <button class="btn btn-info" type="button">Clear</button>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-md-8">
+                <table class="table table-hover table-bordered">
+                    <thead class="table table-primary">
+                        <tr>
+                            <td>Customer ID</td>
+                            <td>Customer Name</td>
+                            <td>Customer Address</td>
+                            <td>Customer Salary</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </section>
+    </section>
+
+    <script src="asserts/js/bootstrap.min.js"></script>
+    <script>
+
+     /*   var http;
+        if(window.ActiveX){
+            http = new ActiveX();
+        }else if(window.XMLHttpRequest){
+            http = new XMLHttpRequest();
+        }*/
+
+     let btn = document.getElementById("btnCustomerSave");
+     btn.addEventListener('click', function () {
+         var xml;
+         xml = new XMLHttpRequest();
+         console.log("Object Creating/ request not initialize " + xml.readyState)
+
+
+         xml.open("POST", "db/db.txt", true);   //meka true kranwa kiynne asynchronus widiyata wade default wenwa.
+                                            // false karothin sychronus wenwa normal js code run wenneth ehema
+         console.log("open state " + xml.readyState)
+
+         xml.send();
+         console.log("send state " +xml.readyState)
+
+         xml.onreadystatechange = function () {
+             if(xml.readyState == 4){
+                 console.log(xml.response)
+             }
+         }
+     });
+
+    </script>
+</body>
+</html>
